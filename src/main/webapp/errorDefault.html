@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>MDM Portal</title>
+        <meta name="description" content="MDM Application" />
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="controls/header/header.css">
+        <style>
+            .button{
+                float: right;
+                margin-right: 50px;
+                line-height: 30px;    
+                background-color: #fff;   
+                border: 1px solid #ccc;    
+                border-radius: 4px;    
+                -moz-border-radius: 4px;   
+                padding: 0 20px;    
+                font-weight: bold;    
+                font-size: 12px;    
+                cursor: pointer;
+            }
+        </style>
+        <script>
+            function doLogout() {
+                sessionStorage.clear();
+                localStorage.clear();
+                document.cookie = "checksession=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+                window.location.href = 'logout.html';
+            }
+            ;
+        </script>
+    </head>
+    <body>
+    <header>
+        <table>
+            <tr>
+                <td class="logo">
+                    <button class="button" onclick="doLogout()">LOGOUT</button>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <div id="appScreen" class="darkPage">
+        <div class="logoutTitle">Please contact your Global Admin to assign Roles and Permissions</div>
+    </div>
+</body>
+</html>

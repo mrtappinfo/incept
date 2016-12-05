@@ -1,0 +1,13 @@
+<section>
+<div class="inner-box">
+     <h1>I have experience in following Industries</h1>
+     
+     <div class="row">
+            <div ng-repeat="industry in industries" class="box col-lg-4 col-md-4 col-sm-4 col-xs-6" title="{{industry.name}}"><a data-ng-click="onIndustrySelection(industry)" data-ng-class="{'active': industrySelected(industry)}" href="#">{{industry.name | trim:20}}</a></div>
+       </div>
+     
+       </div>
+ 
+ <!--End Inner-box-->   
+     <div class="text-center"><button class="btn btn-black" type="button" data-ng-click="nextGoToRoles()">Next</button></div>
+</section>

@@ -1,0 +1,41 @@
+<section>
+<div class="inner-box">
+     
+     <h1>I am open to the</h1>
+     <div class="container-fluid">
+     	<div class="col-md-6">
+     		<h4>State</h4>
+		    
+		    <ui-select multiple ng-model="jobseeker.selectedState" theme="select2" style="width: 90%;" data-ng-disabled="disabled">
+			<ui-select-match placeholder="Select state...">
+			    {{$item.name}}
+			</ui-select-match>
+			<ui-select-choices refresh="searchStates($select)" refresh-delay="500" repeat="fetchedState in fetchedStates | filter: $select.search track by fetchedState.id">
+		        <div ng-bind-html="fetchedState.name | highlight: $select.search"></div>
+		    </ui-select-choices>
+		</ui-select>
+		    
+		    
+     	</div>
+     	
+     	 <div class="col-md-6">
+     	
+     		<h4>City</h4>
+			
+			<ui-select multiple ng-model="jobseeker.selectedCity" theme="select2" style="width: 90%;" data-ng-disabled="disabled">
+			<ui-select-match placeholder="Select city...">
+			    {{$item.name}}
+			</ui-select-match>
+			<ui-select-choices refresh="searchCities($select)" refresh-delay="500" repeat="fetchedCity in fetchedCities | filter: $select.search track by fetchedCity.id">
+		        <div ng-bind-html="fetchedCity.name | highlight: $select.search"></div>
+		    </ui-select-choices>
+		</ui-select>
+     	</div>
+     	 
+     	
+     </div>
+
+	</div>
+ <!--End Inner-box-->   
+     <div class="text-center"><button class="btn btn-black" type="button" data-ng-click="goToComplete()">{{submitting?'Submitting..':'Submit'}}</button></div>
+</section>

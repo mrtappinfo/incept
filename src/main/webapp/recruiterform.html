@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>InfoIncept</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="css/bootstrap-datetimepicker.min" rel="stylesheet"> -->
+<link href="css/mainstyle.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="home" ng-controller="recruiterPageCtrl" data-role='MainMenuDragArea' ng-class="{touchDevice: config.touchDevice, desktopStyle: !config.touchDevice}">
+<div class="page-wrap">
+  <header id="siteheader">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="index.html"><strong>InfoIncept</strong></a> </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">new consultants</a></li>
+            <li><a href="#">employees</a></li>
+          </ul>
+          </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse --> 
+      </div>
+      <!-- /.container-fluid --> 
+    </nav>
+  </header>
+  <div class="main-content">
+    <div class="container">
+      <div class="form-box  bigform form-more">
+        <div class="form-top">
+          <div class="form-top-left">
+            <h3>Infoincept  Recruiter Form </h3>
+          </div>
+        </div>
+        <div class="form-bottom recruiterPage">
+          <form class="userForm" data-toggle="validator" method="post" action="" name="userForm">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter ID<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterID" required class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Name<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterName" required class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Email<span style="color:red"> *</span></label>
+                  <input  class="form-email form-control required" email type="text" ng-model="user.recruiterEmail" maxlength="250" />
+                   <!-- custom-validation-email="custom-validation-email" 
+                    
+                               ng-pattern="/^([0-9a-zA-Z]+(\.|_){1})?[0-9a-zA-Z]+&#64;([0-9a-zA-Z]+\.)+[A-Za-z]+$/"> -->
+                  <!-- <input type="text" ng-model="user.recruiterEmail" class="form-email form-control"> -->
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Company ID<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterCompanyID" class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Company Name<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterCompanyName" class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Quality(In numbers)<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterQuality"  placeholder="Numbers only"  class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Phone number<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterPhoneNo" placeholder="Numbers only"  class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Location city</label>
+                  <input type="text" ng-model="user.recruiterCity" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Location state</label>
+                  <input type="text" ng-model="user.recruiterState" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter TopClient 1 <span style="color:red"> *</span> </label>
+                  <input type="text" ng-model="user.recruiterClient1" required class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter TopClient 2</label>
+                  <input type="text" ng-model="user.recruiterClient2" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter TopClient 3</label>
+                  <input type="text" ng-model="user.recruiterClient3" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter TopClient 4</label>
+                  <input type="text" ng-model="user.recruiterClient4" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter TopClient 5</label>
+                  <input type="text" ng-model="user.recruiterClient5" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Is Accepting Emails</label>
+                  <div class="groupinput">
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isAcceptingEmail" name="inlineRadioOptions" id="inlineRadio1" value="Y">
+                      Yes </label>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isAcceptingEmail" name="inlineRadioOptions" id="inlineRadio2" value="N">
+                      No </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Is Accepting Phone calls</label>
+                  <div class="groupinput">
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isAcceptingPhone" name="inlineRadioOptions" id="inlineRadio1" value="Y">
+                      Yes </label>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isAcceptingPhone"  name="inlineRadioOptions" id="inlineRadio2" value="N">
+                      No </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Linkedin Profile Page Recruiter URL</label>
+                  <input type="text" ng-model="user.recruiterLinkedInURL" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Profile Page Company URL</label>
+                  <input type="text" ng-model="user.recruiterCompanyURL" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label>Is Vendor Recruiter</label>
+                  <div class="groupinput">
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isVendorRecruiter" name="inlineRadioOptions" id="inlineRadio1" value="Y">
+                      Yes </label>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isVendorRecruiter" name="inlineRadioOptions" id="inlineRadio2" value="N">
+                      No </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label>Is Active</label>
+                  <div class="groupinput">
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isActive" name="inlineRadioOptions" id="inlineRadio1" value="Y">
+                      Yes </label>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isActive" name="inlineRadioOptions" id="inlineRadio2" value="N">
+                      No </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label>Is Verified</label>
+                  <div class="groupinput">
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isVerified" name="inlineRadioOptions" id="inlineRadio1" value="Y">
+                      Yes </label>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="user.isVerified" name="inlineRadioOptions" id="inlineRadio2" value="N">
+                      No </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Rate Min<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterRateMin" placeholder="Numbers only"  class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Rate Max<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterRateMax"  placeholder="Numbers only"  class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Job Industry 1<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterIndustry1" class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Job Industry 2</label>
+                  <input type="text" ng-model="user.recruiterIndustry2" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Job Industry 3</label>
+                  <input type="text" ng-model="user.recruiterIndustry3" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Job Industry 4</label>
+                  <input type="text" ng-model="user.recruiterIndustry4" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 1<span style="color:red"> *</span></label>
+                  <input type="text" ng-model="user.recruiterSkill1" class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 2</label>
+                  <input type="text" ng-model="user.recruiterSkill2" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 3</label>
+                  <input type="text" ng-model="user.recruiterSkill3" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 4</label>
+                  <input type="text" ng-model="user.recruiterSkill4" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 5</label>
+                  <input type="text" ng-model="user.recruiterSkill5" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 6</label>
+                  <input type="text" ng-model="user.recruiterSkill6" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 7</label>
+                  <input type="text" ng-model="user.recruiterSkill7" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 8</label>
+                  <input type="text"  ng-model="user.recruiterSkill8"  class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 9</label>
+                  <input type="text"  ng-model="user.recruiterSkill9" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Skill 10</label>
+                  <input type="text"  ng-model="user.recruiterSkill10"  class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Role 1<span style="color:red"> *</span></label>
+                  <input type="text"  ng-model="user.recruiterRole1" class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Role 2</label>
+                  <input type="text" ng-model="user.recruiterRole2"  class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Role 3</label>
+                  <input type="text"  ng-model="user.recruiterRole3" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Role 4</label>
+                  <input type="text" ng-model="user.recruiterRole4"  class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>Desired Role 5</label>
+                  <input type="text"  ng-model="user.recruiterRole5" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 1 <span style="color:red"> *</span></label>
+                  <input type="text"  ng-model="user.recruiterOneYearSkill" class="form-email form-control required">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 2</label>
+                  <input type="text"  ng-model="user.recruiterTwoYearSkill" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 3</label>
+                  <input type="text"  ng-model="user.recruiterThreeYearSkill" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 4</label>
+                  <input type="text"  ng-model="user.recruiterFourYearSkill" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 5</label>
+                  <input type="text"  ng-model="user.recruiterFiveYearSkill" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 6</label>
+                  <input type="text"  ng-model="user.recruiterSixYearSkill" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 7</label>
+                  <input type="text"  ng-model="user.recruiterSevenYearSkill" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 8</label>
+                  <input type="text"  ng-model="user.recruiterEightYearSkill" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 9</label>
+                  <input type="text"  ng-model="user.recruiterNineYearSkill" class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Desired Experience Skill in years 10</label>
+                  <input type="text" ng-model="user.recruiterTenYearSkill"  class="form-email form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Info Posting Date(yyyy-MM-dd)<span style="color:red"> *</span></label>
+                  <div id="datetimepicker1" class="input-append date">
+                    <input data-format="yyyy-MM-dd"  placeholder="yyyy-MM-dd" ng-model="user.recruiterPostingDate" type="text" class="form-control">
+                    </input>
+                    <span class="add-on"> <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="glyphicon glyphicon-calendar"> </i> </span> </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Recruiter Info Expiration Date(yyyy-MM-dd)<span style="color:red"> *</span></label>
+                  <div id="datetimepicker2" class="input-append date">
+                    <input data-format="yyyy-MM-dd"  placeholder="yyyy-MM-dd" ng-model="user.recruiterExpirationDate" type="text" class="form-control required">
+                    </input>
+                    <span class="add-on"> <i data-date-icon="icon-calendar" class="glyphicon glyphicon-calendar"> </i> </span> </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="text-right form-group">
+             <input class="button" type="button" ng-click="saveUser()" value="Save">
+             <!-- <button class="btn btn2" ng-click="saveUser()" value="Save" type="submit">submit </button> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /maincontent --> 
+</div>
+<!-- /page-wrap -->
+
+<footer class="site-footer footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6"> &copy; 2016 InfoIncept. All rights reserved. </div>
+      <div class="col-sm-6 booton-links"> <a  href="javascript:;">About</a> <a  href="javascript:;">Privacy Policy</a> </div>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="lib/bootstrap.min.js"></script> 
+<script src="lib/bootstrap-datetimepicker.min.js"></script> 
+<script src="lib/jquery-2.1.0.min.js"></script>
+<!-- <script src="lib/jquery-migrate-1.0.0.js"></script> -->
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-route.min.js"></script>
+<script src="lib/raphael-min.js"></script>
+<script src="lib/g.raphael-min.js"></script>
+<script src="lib/g.line-min.js"></script>
+<script src="lib/g.pie-min.js"></script>
+<script src="lib/g.bar-min.js"></script>
+<script src="lib/moment.min.js"></script>
+<script src="lib/thenBy.min.js"></script>
+<script src="lib/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
+<link rel="stylesheet" href="lib/jquery-ui.min.css" />
+<link rel="stylesheet" href="lib/font-awesome.min.css">
+
+<script src="lib/jquery-ui.min.js"></script>
+
+<script src="js/api.js"></script>
+<script src="js/appRoutes.js"></script>
+<script src="js/recruiter.controller.js"></script>
+<script src="js/config.js"></script>
+<script type="text/javascript">
+
+ /*  $(function() {
+    $('#datetimepicker1').datetimepicker({
+      pickTime: false
+    });
+	
+	 $('#datetimepicker2').datetimepicker({
+      pickTime: false
+    });
+	
+  });  */
+  </script>
+</body>
+</html>

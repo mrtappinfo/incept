@@ -1,0 +1,50 @@
+<div id="elements" class="searchset"
+	ng-repeat="recruiter in recruiters track by $index">
+	<h4>{{recruiter.recruiterName}}</h4>
+	<div class="progress">
+		<div class="progress-bar progress-bar-success" role="progressbar"
+			aria-valuenow={{recruiter.averageHike}} aria-valuemin="0"
+			aria-valuemax="100" style="width: {{recruiter.averageHike">
+			{{recruiter.averageHike}}%</div>
+	</div>
+	<p>{{recruiter.recruiterCompanyName}}</p>
+	<p>
+		<a href={{recruiter.recruiterLinkedInURL}} target="_blank">{{recruiter.recruiterLinkedInURL}}</a>
+	</p>
+	<p>
+		<strong>Hiring :</strong> {{recruiter.recruiterName}}
+	</p>
+	<p>
+		<strong>For:</strong> {{recruiter.recruiterIndustry1}}
+	</p>
+	<p>
+		<strong>Top Clients: </strong> {{recruiter.recruiterClient1}}
+	</p>
+	<p>
+		<strong>Skills:</strong> {{recruiter.recruiterSkill1}}
+	</p>
+	<p class="small-space">&nbsp;</p>
+	<p>
+		<strong>Accepting calls:</strong> <span class="glyphicon glyphicon-ok"
+			aria-hidden="true"></span>
+	</p>
+
+	<p>
+		<strong>Accepting Resumes:</strong> <span
+			class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+	</p>
+	<p>
+		<strong>Contact before:</strong> <span class="infodate"></span>
+	</p>
+	<p>
+		<strong>Call :</strong>
+	</p>
+	<div class="bottom-button ">
+		<a class="btn btn-link-1" href=""
+			ng-click="sendmessage('Immediately')">I am interested -
+			Immediately </a> <a class="btn btn-link-1" href=""
+			ng-click="sendmessage('Later')">Later - In few weeks</a> <a
+			class="btn btn-link-1" href="" ng-click="sendmessage('No')">No -
+			Not interested</a>
+	</div>
+</div>

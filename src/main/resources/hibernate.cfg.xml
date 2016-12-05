@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+		<!--   Connector definitions -->
+		<!--   For container based. -->
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/test</property>
+		<property name="hibernate.connection.username">root</property>
+   		<property name="hibernate.connection.password">root123</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="format_sql">false</property>
+		<property name="hibernate.jdbc.batch_size">50</property>
+		<property name="hibernate.hbm2ddl.auto">none</property>
+		<property name="hibernateProperties">none</property> -->
+		
+		<mapping class="com.incep.dbobjects.Recruiter"/>
+		<mapping class="com.incep.dbobjects.Company"/>
+		<mapping class="com.incep.dbobjects.RecruiterClient"/>
+		<mapping class="com.incep.dbobjects.RecruiterInfoDates"/>
+		<mapping class="com.incep.dbobjects.RecruiterJobIndustry"/>
+		<mapping class="com.incep.dbobjects.RecruiterQuality"/>
+		<mapping class="com.incep.dbobjects.RecruiterRateRange"/>
+		<mapping class="com.incep.dbobjects.RecruiterRole"/>
+		<mapping class="com.incep.dbobjects.RecruiterSkills"/>
+		
+	</session-factory>
+	
+</hibernate-configuration>

@@ -1,0 +1,30 @@
+<section>
+<div class="inner-box">
+	<style>
+
+    ul {
+    	padding-left: 0px;
+    }
+    </style>
+     <h1>I have following skills</h1>
+		
+		<div class="row">
+     		<div ng-repeat="skill in skills" class="box col-lg-4 col-md-4 col-sm-4 col-xs-6" title="{{role.name}}"><a ng-click="onSkillSelection(skill)" ng-class="{'active': skillSelected(skill)}" href="#">{{skill.name | trim:20}}</a></div>
+     	</div>
+     	 
+     	 <h3 style="font-size:25px">Select more skills</h3>
+     	 
+     	 
+		<ui-select multiple ng-model="jobseeker.selectedSkills" theme="select2" style="width: 70%;" data-ng-disabled="disabled">
+			<ui-select-match placeholder="Select skill...">
+			    {{$item.name}}
+			</ui-select-match>
+			<ui-select-choices refresh="searchSkills($select)" refresh-delay="10" repeat="fetchedSkill in fetchedSkills | filter: $select.search track by fetchedSkill.id">
+		        <div ng-bind-html="fetchedSkill.name | highlight: $select.search"></div>
+		    </ui-select-choices>
+		</ui-select>
+
+	</div>
+ <!--End Inner-box-->   
+     <div class="text-center"><button class="btn btn-black" type="button" data-ng-click="goToStep4()">Next</button></div>
+</section>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SnapLync</title>
+<link href="lib/bootstrap.min.css" rel="stylesheet" type="text/css"  />
+<link href="lib/bootstrap-slider.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"  />
+<!--link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800' rel='stylesheet' type='text/css'-->
+
+<script src="lib/jquery.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/bootstrap-slider.js"></script>
+</head>
+
+<body>
+
+
+<header>
+  <div class="container">
+  
+     <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">SnapLync</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login?profile=jobseeker">Jobseekers</a></li>
+        <li><a href="login?profile=recruiter">Recruiters</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
+  </div>
+
+</header>
+
+<!--End Header-->
+
+ <div class="main-slider">
+   
+    <div class="login-box">
+    
+            <h1>Sign in</h1>
+            <hr />
+            
+            
+            <#if model['profile']=='jobseeker'>
+				<div class="verify">Find your dream job in 5 seconds</div>
+            <#else>
+  				<div class="verify">Recruit smart, it just takes 5 seconds to get started.</div>
+            
+			</#if>
+            
+            <div class="row"><div class="facebook-tab col-lg-6 col-md-6 col-sm-6 col-xs-12"><a href="/auth/social?provider=linkedin">Sign Up with Linkedin</a></div>
+            <div class="google-tab col-lg-6 col-md-6 col-sm-6 col-xs-12"><a href="/auth/social?provider=googleplus">Sign Up with Google</a></div></div>
+     
+      </div>
+ <!--End Login-box--> 
+ <div class="clearfix"></div>
+ </div>
+ 
+<!--End Slider--> 
+<#if model['profile']=='jobseeker'>
+				<div class="heading text-center">SnapLync helps people to find better paying jobs</div>
+ <#else>
+  	<div class="heading text-center">SnapLync helps recruiters hire best candidates at best rates</div>
+        
+</#if>
+<!--End heading-->  
+
+
+ 
+<footer>
+<div class="footer">
+<ul class="footer-top">
+<li><a href="#">Home</a></li>
+<li><a href="#">Employers</a></li>
+<li><a href="#">Sales</a></li>
+<li><a href="#">Contractors</a></li>
+<li><a href="#">Companies</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Support</a></li>
+<li><a href="#">Blog</a></li>
+<li><a  href="#">Careers</a></li></ul>
+
+<ul class="footer-bottom">
+<li>&copy; 2015 Hired, Inc. All Rights Reserved.</li>
+<li><a href="#">Privacy</a></li>
+<li><a href="#">Terms</a></li>
+<li>•</li>
+<li><a href="#">Facebook</a></li>
+<li><a href="#">Twitter</a></li>
+<li><a href="#">LinkedIn</a></li>
+<li><a href="#">Glassdoor</a></li>
+<li><a href="#">YouTube</a></li>
+<li><a href="#">Google+</a></li>
+</ul>
+</div>
+
+ 
+ </footer>
+ 
+ 
+
+</body>
+</html>

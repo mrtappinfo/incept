@@ -1,0 +1,42 @@
+<section ng-controller="RecruiterStep4Controller">
+<div class="inner-box">
+	
+	  <h1 style="font-size:25px">Range of compensation you fill in  most often</h1>
+		<br>
+		<hr>
+     	<div class='slider-example' style="text-align: left"> 
+     		<h3 style="font-size:20px;text-align: left">When hiring hourly</h3>  
+     		<div class="well" style="padding-top:0px;padding-left:0px">
+     			<h3 style="font-size:15px;text-align: center;"">Minimum {{recruiter.minCompensationHourly}} $/hr</h3><div><input id="minHourly" type="text"/></div>
+     			<h3 style="font-size:15px;text-align: center;">Maximum {{recruiter.maxCompensationHourly}} $/hr</h3><div><input id="maxHourly" type="text"/></div>
+     		</div>
+     	</div>
+     	
+     	<br>
+		<hr>
+     	<div class='slider-example' style="text-align: left"> 
+     		<h3 style="font-size:20px;text-align: left">When hiring monthly</h3>  
+     		<div class="well" style="padding-top:0px;padding-left:0px">
+     			<h3 style="font-size:15px;text-align: center;"">Minimum {{recruiter.minCompensationMonthly/1000 | number:0}}K $/m</h3><div><input id="minMonthly" type="text"/></div>
+     			<h3 style="font-size:15px;text-align: center;">Maximum {{recruiter.maxCompensationMonthly/1000 | number:0}}K $/m</h3><div><input id="maxMonthly" type="text"/></div>
+     		</div>
+     	</div>
+     	
+     	
+     	<br>
+		<hr>
+     	<div class='slider-example' style="text-align: left"> 
+     		<h3 style="font-size:20px;text-align: left">When hiring yearly</h3>  
+     		<div class="well" style="padding-top:0px;padding-left:0px">
+     			<h3 style="font-size:15px;text-align: center;"">Minimum {{recruiter.minCompensationYearly/1000 | number:0}}K $/yr</h3><div><input id="minYearly" type="text"/></div>
+     			<h3 style="font-size:15px;text-align: center;">Maximum {{recruiter.maxCompensationYearly/1000 | number:0}}K $/yr</h3><div><input id="maxYearly" type="text"/></div>
+     		</div>
+     	</div>
+     
+     
+
+</div>
+ <!--End Inner-box-->   
+<div class="text-center"><button class="btn btn-black" type="button" data-ng-click="goToComplete()">{{submitting?'Submitting..':'Submit'}}</button></div>
+
+</section>
